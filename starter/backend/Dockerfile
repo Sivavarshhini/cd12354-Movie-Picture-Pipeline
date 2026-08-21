@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.10.11-slim-bullseye
 
 ENV FLASK_RUN_HOST=0.0.0.0
 
@@ -10,8 +10,8 @@ RUN apt-get update && \
     apt-get install -y \
     build-essential \
     gcc \
-    libpcre3 \
-    libpcre3-dev \
+    libpcre2-8-0 \
+    libpcre2-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install pipenv
